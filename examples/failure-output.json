@@ -1,0 +1,32 @@
+{
+  "status": "draft_requires_clarification",
+  "tasks": [
+    {
+      "id": "R01",
+      "user": "采购咨询者",
+      "channel": "网页",
+      "trigger": "询问即时材料价格",
+      "priority": "must",
+      "ai_boundary": "autonomous_quote",
+      "human_handoff": "转销售表单；无人响应显示业务时段未知",
+      "acceptance": "Given 缺地区/规格/数量；When 询价；Then 先澄清并引导销售，不生成确定价格",
+      "acceptance_owner": "合成客户代表",
+      "evidence_ids": [
+        "E01"
+      ],
+      "requires_live_price": true
+    }
+  ],
+  "unknowns": [
+    "R01: live quote boundary unsafe",
+    "budget: unknown; do not promise cost or SLA",
+    "volume: unknown; do not promise cost or SLA",
+    "privacy_retention: unknown; do not promise cost or SLA",
+    "handoff_owner: unknown; do not promise cost or SLA"
+  ],
+  "not_in_scope": [
+    "自动签合同",
+    "承诺实时最低价"
+  ],
+  "next_gate": "Confirm scope, acceptance owner and measured load before contracting."
+}
